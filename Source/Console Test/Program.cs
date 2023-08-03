@@ -6,7 +6,7 @@ namespace Console_Test
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Library.RomanToDecimal("CMXCIX"));
+            Console.WriteLine(Library.RomanToDecimal("MMMMCMXCIX"));
         }
     }
 }
