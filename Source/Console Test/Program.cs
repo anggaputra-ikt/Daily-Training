@@ -6,7 +6,9 @@ namespace Console_Test
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Library.RomanToDecimal("MMMMCMXCIX"));
+            Console.WriteLine(Library.RomanToDecimal("IV"));
+            //List<string> list = new List<string>(){ "the", "quick", "brown", "fox", "quick"};
+            //Console.WriteLine(Library.ClosestStrings(list, "the", "fox"));
         }
     }
 }
