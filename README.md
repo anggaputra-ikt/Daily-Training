@@ -5,3 +5,6 @@
 2. ClosestStrings
     - [Code](https://github.com/anggaputra-ikt/Daily-Training/blob/52d6a9f630a57641b1fb2e21f3ee22dc78003b6e/Source/Library/Library.cs#L82)
     - [Flow](https://github.com/anggaputra-ikt/Daily-Training/blob/master/Source/FlowChart/ClosestStrings.drawio.png)
+3. EncryptString
+    - [Code](https://github.com/anggaputra-ikt/Daily-Training/blob/bb720614a6a1d8b684307e936f796b8fd9edcfab/Source/Library/Library.cs#L141)
+    - [Flow](https://github.com/anggaputra-ikt/Daily-Training/blob/master/Source/FlowChart/EncryptString.drawio.png)
