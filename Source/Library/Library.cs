@@ -132,5 +132,58 @@
             }
             return $"{distance} to {direction}";
         }
+
+        /// <summary>
+        /// Enkripsi dengan mengubah total huruf menjadi hexadecimal dan membalikan hasilnya
+        /// </summary>
+        /// <param name="input">Adalah string</param>
+        /// <returns>Mengembalikan hasil berupa string</returns>
+        public static string EncryptString(string input)
+        {
+            string ConvertToHex(int number)
+            {
+                // Pembagi dari nilai dibagi 16 (base 16)
+                int divide = number / 16;
+                // Sisa dari hasil bagi
+                int remainder = number % 16;
+                string remainderHex = string.Empty;
+                if (remainder == 10) remainderHex = "a";
+                else if (remainder == 11) remainderHex = "b";
+                else if (remainder == 12) remainderHex = "c";
+                else if (remainder == 13) remainderHex = "d";
+                else if (remainder == 14) remainderHex = "e";
+                else if (remainder == 15) remainderHex = "f";
+                return $"{(divide == 0 ? string.Empty : divide)}{(remainderHex != string.Empty ? remainderHex : remainder)}";
+            }
+
+            if (string.IsNullOrEmpty(input)) return "Input harus diisi.";
+            List<char> mainChar = new List<char>();
+            // Filter karakter utama
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (mainChar.Contains(char.ToLower(input[i])) == false)
+                {
+                    mainChar.Add(char.ToLower(input[i]));
+                }
+            }
+
+            var concat = string.Empty;
+            for (int i = 0; i < mainChar.Count; i++)
+            {
+                // Mencari karakter yang ada pada mainChar dengan string inputnya
+                var findChar = input.Where(c => char.ToLower(c) == mainChar[i]);
+                // Menghitung jumlah karakter yang dicari
+                var findCount = findChar.Count();
+                // Mengubah jumlah menjadi nilai hexadecimal
+                var countToHex = ConvertToHex(findCount);
+                concat += $"{mainChar[i]}{countToHex}";
+            }
+            // Konversi menjadi array char
+            var concatToChar = concat.ToCharArray();
+            // Membalik urutan array
+            var reverse = concatToChar.Reverse();
+            // Mengembalikan nilai menjadi string
+            return string.Concat(reverse);
+        }
     }
 }
