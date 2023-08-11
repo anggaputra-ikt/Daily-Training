@@ -8,3 +8,6 @@
 3. EncryptString
     - [Code](https://github.com/anggaputra-ikt/Daily-Training/blob/bb720614a6a1d8b684307e936f796b8fd9edcfab/Source/Library/Library.cs#L141)
     - [Flow](https://github.com/anggaputra-ikt/Daily-Training/blob/master/Source/FlowChart/EncryptString.drawio.png)
+4. ValidateIPAddress
+    - [Code](https://github.com/anggaputra-ikt/Daily-Training/blob/82ca9de79311ac4db3822cbf1287a3f89e212772/Source/Library/Library.cs#L194)
+    - [Flow](https://github.com/anggaputra-ikt/Daily-Training/blob/master/Source/FlowChart/ValidateIPAddress.drawio.png)
