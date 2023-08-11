@@ -185,5 +185,50 @@
             // Mengembalikan nilai menjadi string
             return string.Concat(reverse);
         }
+
+        /// <summary>
+        /// Validasi apakah input merupakan IP Address yang valid atau tidak
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <returns>Jika IP Address valid akan mengembalikan nilai 1, sebaliknya jika tidak valid akan mengembalikan nilai 0.</returns>
+        public static int ValidateIPAddress(string ip)
+        {
+            // Cek apkah input sebuah digit
+            bool IsDigit(string input)
+            {
+                if (input == null) return false;
+                // Cek jika input berupa integer
+                var check = int.TryParse(input, out var result);
+                // Jika hasil bukan integer kembalikan false
+                if (check == false) return false;
+                return true;
+            }
+
+            // Cek apakah input adalah bagian valid
+            bool IsValidPart(string input)
+            {
+                if (input == null) return false;
+                // Jika panjang input 0 atau lebih dari 3 maka kembalikan false
+                if (input.Length == 0 || input.Length > 3) return false;
+                // Jika input bukan digit kembalikan false
+                if (IsDigit(input) == false) return false;
+                // Dapatkan nilai dari input pertama
+                var inputZero = char.GetNumericValue(input[0]);
+                // Jika panjang input lebih dari 1 dan nilai input pertama sama dengan 0 maka kembalikan false
+                if (input.Length > 1 && inputZero == 0) return false;
+                return true;
+            }
+
+            // Jika input adalah null kembalikan 0
+            if (ip == null) return 0;
+            // Pisahkan input dengan pemisah titik '.'
+            var split = ip.Split('.');
+            for (int i = 0; i < split.Length; i++)
+            {
+                // Cek jika bagian ip adalah valid, jika tidak valid kembalikan 0
+                if (IsValidPart(split[i]) == false) return 0;
+            }
+            return 1;
+        }
     }
 }
