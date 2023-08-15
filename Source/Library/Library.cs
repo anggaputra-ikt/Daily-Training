@@ -230,5 +230,59 @@
             }
             return 1;
         }
+
+        /// <summary>
+        /// Mencari nilai partisi string yang seimbang dari huruf L dan R
+        /// </summary>
+        /// <param name="partitions"></param>
+        /// <returns>Jumlah partisi yang seimbang</returns>
+        public static int BalancedStringPartitions(string partitions)
+        {
+            // Jika string null or empty kembalikan 0
+            if (string.IsNullOrEmpty(partitions)) return 0;
+            // Konversi string menjadi Upper
+            partitions = partitions.ToUpper();
+            // Inisiasi untuk menghitung huruf L / R
+            int counterL = 0;
+            int counterR = 0;
+            // Inisiasi untuk posisi yang akan dipisahkan
+            List<int> partitionPoin = new List<int>();
+            // Looping untuk mencari posisi pemisah
+            for (int i = 0; i < partitions.Length; i++)
+            {
+                // Jika nilai i sama dengan L, maka tambah 1 dari nilai counter L
+                if (partitions[i] == 'L')
+                {
+                    counterL++;
+                }
+                // Jika nilai i sama dengan L, maka tambah 1 dari nilai counter R
+                if (partitions[i] == 'R')
+                {
+                    counterR++;
+                }
+                // Jika nilai counter L dan R lebih dari 0, dan nilai counter L dan R sama
+                if (counterL > 0 && counterR > 0 && counterL == counterR)
+                {
+                    // Menambahkan nilai posisi ke dalam list,
+                    // ditambah 1 agar posisi pembagi setelah nilai yang seimbang
+                    partitionPoin.Add(i + 1);
+                    // Reset nilai dari counter L dan r
+                    counterL = 0;
+                    counterR = 0;
+                }
+            }
+            // Looping untuk menambahkan pemisah
+            for (int i = 0; i < partitionPoin.Count - 1; i++)
+            {
+                // Menambahkan koma "," kedalam string sesuai posisinya,
+                // dan ditambhkan nilai dari i karena posisi akan naik
+                // karena bertambahnya nilai looping dan string
+                partitions = partitions.Insert(partitionPoin[i] + i, ",");
+            }
+            // Memisahkan string dengan koma
+            var partitionSplit = partitions.Split(",");
+            // Mengembalikan jumlah partisi yang seimbang
+            return partitionSplit.Count();
+        }
     }
 }
