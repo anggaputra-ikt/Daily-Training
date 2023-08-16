@@ -300,10 +300,10 @@
             // Looping setiap karakter dari input
             for (int i = 0; i < input.Length; i++)
             {
-                // Mencari nilai dari karakter apakah null
-                var find = valid.FirstOrDefault(c => c == input[i]);
+                // Mencari nilai dari karakter
+                var find = valid.Any(c => c == input[i]);
                 // Jika tidak valid mengembalikan nilai false
-                if (find == 0)
+                if (find == false)
                 {
                     return false;
                 }
