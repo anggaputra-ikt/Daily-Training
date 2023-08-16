@@ -284,5 +284,32 @@
             // Mengembalikan jumlah partisi yang seimbang
             return partitionSplit.Count();
         }
+
+        /// <summary>
+        /// Cek karakter valid atau tidak
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns>Mengembalikan nilai true jika valid dan false jika tidak valid.</returns>
+        public static bool IsValidCharacters(string input)
+        {
+            var valid = new[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                '!', '(', ')', '-', ',', '?', '[', ']', '_', '`', '~', ';', ':', '@', '#', '$', '%', '^', '&', '*', '+', '='};
+
+            // Looping setiap karakter dari input
+            for (int i = 0; i < input.Length; i++)
+            {
+                // Mencari nilai dari karakter apakah null
+                var find = valid.FirstOrDefault(c => c == input[i]);
+                // Jika tidak valid mengembalikan nilai false
+                if (find == 0)
+                {
+                    return false;
+                }
+            }
+            // Jika valid mengembalikan nilai true
+            return true;
+        }
     }
 }
