@@ -14,3 +14,5 @@
 5. BalancedStringPartitions
     - [Code](https://github.com/anggaputra-ikt/Daily-Training/blob/b4e23d7fb73901fafe1dc37a6bf26941d619714c/Source/Library/Library.cs#L239)
     - [Flow](https://github.com/anggaputra-ikt/Daily-Training/blob/master/Source/FlowChart/BalancedStringPartitions.drawio.png)
+6. IsValidCharacters
+    - [Code](https://github.com/anggaputra-ikt/Daily-Training/blob/8f768fa2311858d1574136d355b5960ad3cd60e6/Source/Library/Library.cs#L293)
