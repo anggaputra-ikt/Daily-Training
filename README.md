@@ -11,3 +11,6 @@
 4. ValidateIPAddress
     - [Code](https://github.com/anggaputra-ikt/Daily-Training/blob/82ca9de79311ac4db3822cbf1287a3f89e212772/Source/Library/Library.cs#L194)
     - [Flow](https://github.com/anggaputra-ikt/Daily-Training/blob/master/Source/FlowChart/ValidateIPAddress.drawio.png)
+5. BalancedStringPartitions
+    - [Code](https://github.com/anggaputra-ikt/Daily-Training/blob/b4e23d7fb73901fafe1dc37a6bf26941d619714c/Source/Library/Library.cs#L239)
+    - [Flow](https://github.com/anggaputra-ikt/Daily-Training/blob/master/Source/FlowChart/BalancedStringPartitions.drawio.png)
