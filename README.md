@@ -16,3 +16,6 @@
     - [Flow](https://github.com/anggaputra-ikt/Daily-Training/blob/master/Source/FlowChart/BalancedStringPartitions.drawio.png)
 6. IsValidCharacters
     - [Code](https://github.com/anggaputra-ikt/Daily-Training/blob/8f768fa2311858d1574136d355b5960ad3cd60e6/Source/Library/Library.cs#L293)
+7. FirstNonRepeatingChar
+    - [Code](https://github.com/anggaputra-ikt/Daily-Training/blob/714df0860b2a29f441f070b90d0c79f578e003db/Source/Library/Library.cs#L334)
+    - [Flow](https://github.com/anggaputra-ikt/Daily-Training/blob/master/Source/FlowChart/FirstNonRepeatingChar.drawio.png)
