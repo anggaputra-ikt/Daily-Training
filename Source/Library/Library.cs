@@ -300,8 +300,22 @@
             // Looping setiap karakter dari input
             for (int i = 0; i < input.Length; i++)
             {
+
                 // Mencari nilai dari karakter
-                var find = valid.Any(c => c == input[i]);
+                // Func<char, bool> validChar = v => v.Equals(input[i]);
+                // var find = valid.Any(validChar);
+                var find = valid.Any((char c) =>
+                {
+                    char inputChar = input[i];
+                    if (c == inputChar)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                });
                 // Jika tidak valid mengembalikan nilai false
                 if (find == false)
                 {
@@ -310,6 +324,40 @@
             }
             // Jika valid mengembalikan nilai true
             return true;
+        }
+
+        /// <summary>
+        /// Mencari karakter pertama yang tidak mengulang
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns>Mengembalikan karakter pertama yang tidak mengulang</returns>
+        public static char FirstNonRepeatingChar(string input)
+        {
+            // Jika input null atau empty kembalikan nilai default dari karakter yaitu '\0'
+            if (string.IsNullOrEmpty(input)) return default;
+            // Konversi input menjadi lower
+            input = input.ToLower();
+            // Inisiasi dictionary untuk 'karakter' sebagai key dan 'jumlah karakter' sebagai value
+            Dictionary<char, int> charKey = new Dictionary<char, int>();
+            // Looping untuk menghitung jumlah karakter dan menambahkan ke dictionary jika belum ada
+            foreach (char c in input)
+            {
+                // Jika dictionary mengandung karakter yang sudah ada
+                if (charKey.ContainsKey(c))
+                {
+                    // Tambahkan 1 untuk valuenya
+                    charKey[c] += 1;
+                }
+                else
+                {
+                    // Tambahkan karakter ke dalam dictionary dan beri nilai valuenya 1
+                    charKey.Add(c, 1);
+                }
+            }
+            // Filter dictionary dimana value sama dengan 1 dan pilih key
+            var nonRepeatingChars = charKey.Where(ch => ch.Value == 1).Select(ch => ch.Key);
+            // Mengembalikan key pertama atau karakter pertama
+            return nonRepeatingChars.First();
         }
     }
 }

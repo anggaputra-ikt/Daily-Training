@@ -6,10 +6,8 @@ namespace Console_Test
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Library.IsValidCharacters("12345"));
-            Console.WriteLine(Library.IsValidCharacters("123¤bc"));
-            Console.WriteLine(Library.IsValidCharacters("no183h_+`3T#@t23T@#T"));
-            Console.WriteLine(Library.IsValidCharacters("kl0k0`~g3pokgo😉"));
+            Console.WriteLine(Library.FirstNonRepeatingChar("FirstNonReapeatingChar"));
         }
+        
     }
 }
